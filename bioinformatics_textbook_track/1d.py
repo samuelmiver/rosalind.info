@@ -1,45 +1,57 @@
-data = [line.strip("\n") for line in open("./files/rosalind_1d.txt", "r")]
+#!/usr/bin/env python3
 
-genome = data[0]
-values = data[1].split()
-k = int(values[0])
-L = int(values[1])
-t = int(values[2])
+def divide_genome(genome, L):
 
+    """
+    Given a string and an integer L, this function retrieves all the possible L-mers contained in the genome
+    """
 
-def makeCandidates(genome):
-    candidates = []
-    for i in range(0, len(genome)):
-        candidate = genome[i: i + k]
-        if candidate in candidates or len(candidate) < k:
-            pass
-        else:
-            candidates.append(candidate)
-    return candidates
+    m = L
+    L_windows = []
 
+    while m <= len(genome):
+        new_window = genome[m-L:m]
+        L_windows.append(new_window)
 
-def makeWindows(genome):
-    windows = []
-    for i in range(0, len(genome)):
-        window = genome[i: i + L]
-        if window in windows or len(window) < L:
-            pass
-        else:
-            windows.append(window)
-    return windows
+        m += 1
+
+    return L_windows
 
 
-def matches(candidate, window):
-    count = 0
-    for i in range(0, len(window)):
-        if count >= t or len(window[i: i + k]) < k:
-            break
-        elif window[i: i + k] == candidate:
-            count += 1
-    return count
+def divide_and_count(L_windows, k, t):
+
+    """
+    Given a list of subsequences and k and t, this functions find in each subsequence all the possible k-mers
+    appearing exactly t times in the subsequence
+    """
+
+    results = set()
+
+    for L_mer in L_windows:
+        k_windows = divide_genome(L_mer, k) # We extract in a list all the possible k-mers
+
+        # Generate a set of unique elements to avoid multicounts...
+        k_windows_set = set(k_windows)
+
+        for k_window in k_windows_set:
+            if k_windows.count(k_window) == t:
+                results.add(k_window)
 
 
-candidates = makeCandidates(genome)
-windows = makeWindows(genome)
+    print("\t".join(results))
 
-print (matches(candidates,windows))
+
+if __name__ == "__main__":
+
+    data = [line.strip("\n") for line in open("./files/rosalind_1d.txt", "r")]
+
+    genome = data[0]
+    values = data[1].split()
+    k = int(values[0])
+    L = int(values[1])
+    t = int(values[2])
+
+    windows_list = divide_genome(genome, L)
+    divide_and_count(windows_list, k, t)
+
+
