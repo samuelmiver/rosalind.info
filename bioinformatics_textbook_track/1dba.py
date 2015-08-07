@@ -15,4 +15,4 @@ def pattern_matching(filename):
 	return '%s' % ' '.join(map(str, locations))
 
 
-print (pattern_matching("./files/rosalind_1c.txt"))
+print (pattern_matching("./files/rosalind_1dba.txt"))
