@@ -36,12 +36,6 @@ def main_f(peptide, genomei, codon_table):
 
                 codond_start += 3
 
-
-
-
-
-
-
     print(' '.join(results))
 
 
