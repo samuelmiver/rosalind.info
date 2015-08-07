@@ -27,6 +27,8 @@ def bio_processes(protID, printer=False):
     if printer:
         print('\n'.join(functions))
 
+    # Return the list
+    return functions
 
 if __name__ == '__main__':
 
