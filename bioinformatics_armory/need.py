@@ -27,9 +27,9 @@ def need():
     needle_cline.asequence = ids[0]
     needle_cline.bsequence = ids[1]
     needle_cline.outfile = "need.txt"
-    needle_cline.gapopen = 11
+    needle_cline.gapopen = 10
     needle_cline.gapextend = 1
-    needle_cline.endopen = 11
+    needle_cline.endopen = 10
     needle_cline.endextend = 1
     needle_cline.endweight = True
 
