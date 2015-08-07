@@ -25,6 +25,6 @@ def freq_word(filename):
 
 # Execution part:
 
-x = freq_word("./files/rosalind_1a.txt")
+x = freq_word("./files/rosalind_1bba.txt")
 
 print ('%s' % ' '.join(map(str, x)))
