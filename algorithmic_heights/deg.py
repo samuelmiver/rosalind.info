@@ -10,7 +10,6 @@ def deg():
 
     with open('./files/rosalind_deg.txt', 'r') as f:
         next(f)
-        count = 0
         for line in f:
             line = line.strip().split()
             edgeA = int(line[0])
