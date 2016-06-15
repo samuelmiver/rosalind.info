@@ -58,9 +58,12 @@ def consensus_string( profile_matrix ):
 
 
 #Execution part:
-x = profile_matrix_creator("./rosalind_cons.txt")
-y = consensus_string(x)
 
-print (y)
-for element in x:
-    print (element+':'," ".join([str(num) for num in x[element]]))
+if __name__ == '__main__':
+
+    x = profile_matrix_creator("./rosalind_cons.txt")
+    y = consensus_string(x)
+
+    print (y)
+    for element in x:
+        print (element+':'," ".join([str(num) for num in x[element]]))
