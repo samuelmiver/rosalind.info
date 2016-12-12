@@ -43,7 +43,7 @@ def divide_and_count(L_windows, k, t):
 
 if __name__ == "__main__":
 
-    data = [line.strip("\n") for line in open("./files/rosalind_1eba.txt", "r")]
+    data = [line.strip("\n") for line in open("./files/rosalind_ba1e.txt", "r")]
 
     genome = data[0]
     values = data[1].split()

@@ -27,7 +27,7 @@ def main_f(pattern, genome, d):
 
 if __name__ == "__main__":
 
-    data = [line.strip("\n") for line in open("./files/rosalind_1hba.txt", "r")]
+    data = [line.strip("\n") for line in open("./files/rosalind_ba1h.txt", "r")]
 
     pattern = data[0]
     genome = data[1]

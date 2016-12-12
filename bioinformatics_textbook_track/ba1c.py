@@ -12,4 +12,4 @@ def reverse_complement(filename):
     print(bases)
 
 
-reverse_complement("./files/rosalind_1cba.txt")
+reverse_complement("./files/rosalind_ba_1c.txt")

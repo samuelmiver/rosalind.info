@@ -1,4 +1,4 @@
-with open('files/rosalind_1fba.txt') as input_data:
+with open('files/rosalind_ba1f.txt') as input_data:
 	dna = input_data.read().strip()
 
 skew_value, min_skew, min_ind = 0, 1, []

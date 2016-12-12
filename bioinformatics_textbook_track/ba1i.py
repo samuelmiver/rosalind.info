@@ -37,7 +37,7 @@ def kmer_mismatches(kmer, d):
 def main():
     """Main call. Parses, runs, and saves problem specific data."""
     # Read the input data.
-    with open('files/rosalind_1iba.txt') as input_data:
+    with open('files/rosalind_ba1i.txt') as input_data:
         seq = input_data.readline().strip()
         k, d = map(int, input_data.read().strip().split())
 
