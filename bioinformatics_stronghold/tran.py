@@ -14,7 +14,8 @@ def tran(fil):
 
     for n, m in zip(seqA, seqB):
         if n!=m:
-            if sorted(n, m)==sorted(['A', 'G']) or sorted(n, m)==sorted(['C', 'T']):
+            l = [n, m]
+            if sorted(l) in [['A', 'G'], ['C', 'T']]:
                 transits+=1
             else:
                 transvrs+=1
